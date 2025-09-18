@@ -14,19 +14,12 @@ import {
   MapPin,
   Clock,
   Github,
-  Twitter,
   Linkedin,
   Send,
-  MessageSquare,
-  Users,
   Building,
   Globe,
-  Award,
-  Calendar,
   ArrowLeft,
   CheckCircle,
-  AlertCircle,
-  Heart
 } from 'lucide-react';
 
 interface ContactPageProps {
