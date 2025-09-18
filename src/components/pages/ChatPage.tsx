@@ -91,13 +91,6 @@ export function ChatPage({ onNavigate, isDark }: ChatPageProps) {
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const aiResponses = [
-    "Based on the latest ARGO float data, I can see some interesting temperature patterns in the Pacific region. The average surface temperature has increased by 0.3°C over the past month, with notable warming in the equatorial zone.",
-    "Looking at the salinity measurements from the selected floats, there's a clear gradient from 34.2 PSU in the north to 35.1 PSU in the subtropical regions. This is consistent with typical ocean circulation patterns.",
-    "The ARGO float network shows excellent coverage in this area. Currently, 47 active floats are reporting data, with the last measurements taken within the past 6 hours. Float ARGO-001 shows particularly interesting deep water profiles.",
-    "I've identified an anomalous temperature spike at depth 1500m near coordinates 35.5°N, 125.2°W. This could indicate an oceanic eddy or unusual current activity. Would you like me to analyze this further?",
-    "The trend analysis shows seasonal variations are within normal parameters, but there's a slight uptick in surface temperatures that correlates with recent climate data. The confidence interval is 95% with a margin of error of ±0.1°C."
-  ];
 
   useEffect(() => {
     if (scrollAreaRef.current) {
@@ -106,31 +99,43 @@ export function ChatPage({ onNavigate, isDark }: ChatPageProps) {
   }, [messages]);
 
   const handleSendMessage = async () => {
-    if (!inputMessage.trim()) return;
+  if (!inputMessage.trim()) return;
 
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      type: 'user',
-      content: inputMessage,
-      timestamp: new Date()
-    };
+  const userMessage: Message = {
+    id: Date.now().toString(),
+    type: 'user',
+    content: inputMessage,
+    timestamp: new Date()
+  };
 
   setMessages(prev => [...prev, userMessage]);
-    setInputMessage('');
-    setIsTyping(true);
-
-    setTimeout(() => {
-      const aiMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        type: 'ai',
-        content: aiResponses[Math.floor(Math.random() * aiResponses.length)],
-        timestamp: new Date(),
-        location: Math.random() > 0.7 ? { lat: 35.5, lng: -125.2 } : undefined
-      };
-      setMessages(prev => [...prev, aiMessage]);
-      setIsTyping(false);
-    }, 1500 + Math.random() * 1000);
-  };
+  setInputMessage('');
+  setIsTyping(true);
+  try {
+    const response = await fetch(`http://localhost:8000/chat-query/${encodeURIComponent(inputMessage)}`);
+    const data = await response.json();
+    
+    const aiMessage: Message = {
+      id: (Date.now() + 1).toString(),
+      type: 'ai',
+      content: data.answer || 'Sorry, I couldn\'t process that request.', 
+      timestamp: new Date(),
+      location: Math.random() > 0.7 ? { lat: 35.5, lng: -125.2 } : undefined 
+    };
+    setMessages(prev => [...prev, aiMessage]);
+  } catch (error) {
+    console.error('Error fetching from API:', error);
+    const aiMessage: Message = {
+      id: (Date.now() + 1).toString(),
+      type: 'ai',
+      content: 'Sorry, there was an error connecting to the server.', 
+      timestamp: new Date()
+    };
+    setMessages(prev => [...prev, aiMessage]);
+  } finally {
+    setIsTyping(false); 
+  }
+};
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
