@@ -1,19 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Button } from '../ui/button';
-import { Card, CardContent} from '../ui/card';
 import { Badge } from '../ui/badge';
 import { Input } from '../ui/input';
 import { OceanMap } from '../OceanMap';
 import { 
   ArrowRight,  
   Database, 
-  TrendingUp, 
-  Play,
   CheckCircle,
   Globe,
-  Waves,
-  Activity,
-  MapPin,
   Award,
   Target,
   Download,
@@ -27,7 +21,7 @@ interface HomePageProps {
 }
 
 export function HomePage({ onNavigate, isDark, isLoggedIn }: HomePageProps) {
-  const [currentUseCaseIndex, setCurrentUseCaseIndex] = useState(0);
+  // removed unused currentUseCaseIndex state
   const [stats, setStats] = useState({
     dataPoints: 0,
     activeUsers: 0,
@@ -89,39 +83,6 @@ export function HomePage({ onNavigate, isDark, isLoggedIn }: HomePageProps) {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentUseCaseIndex((prev) => (prev + 1) % useCases.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const useCases = [
-    {
-      title: "Climate Research",
-      description: "Track long-term temperature trends and predict climate impacts",
-      icon: TrendingUp,
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      title: "Marine Biology",
-      description: "Study ecosystem changes and marine life distribution patterns",
-      icon: Activity,
-      color: "from-green-500 to-teal-500"
-    },
-    {
-      title: "Weather Forecasting",
-      description: "Improve weather models with real-time ocean temperature data",
-      icon: Waves,
-      color: "from-purple-500 to-indigo-500"
-    },
-    {
-      title: "Shipping & Navigation",
-      description: "Optimize routes using current patterns and temperature data",
-      icon: MapPin,
-      color: "from-orange-500 to-red-500"
-    }
-  ];
 
   const platformHighlights = [
     { label: "Data Sources", value: "12+", icon: Database },
@@ -189,15 +150,7 @@ export function HomePage({ onNavigate, isDark, isLoggedIn }: HomePageProps) {
                   Start Free Trial
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button 
-                  variant="outline"
-                  size="lg"
-                  onClick={() => onNavigate('chat')}
-                  className="border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-4 text-lg group"
-                >
-                  <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  Watch Demo
-                </Button>
+
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6">
@@ -242,21 +195,6 @@ export function HomePage({ onNavigate, isDark, isLoggedIn }: HomePageProps) {
                   </div>
                 </div>
               </div>
-
-              <div className="absolute -right-4 top-20 hidden xl:block">
-                <Card className={`w-48 bg-gradient-to-r ${useCases[currentUseCaseIndex].color} text-white border-0 transition-all duration-500 hover-lift`}>
-                  <CardContent className="p-4">
-                    <div className="flex items-center mb-2">
-                      {(() => {
-                        const IconComponent = useCases[currentUseCaseIndex].icon;
-                        return <IconComponent className="h-5 w-5 mr-2" />;
-                      })()}
-                      <span className="font-semibold text-sm">{useCases[currentUseCaseIndex].title}</span>
-                    </div>
-                    <p className="text-xs text-white/90">{useCases[currentUseCaseIndex].description}</p>
-                  </CardContent>
-                </Card>
-              </div>
             </div>
           </div>
         </div>
@@ -274,21 +212,7 @@ export function HomePage({ onNavigate, isDark, isLoggedIn }: HomePageProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {useCases.map((useCase, index) => {
-              const IconComponent = useCase.icon;
-              return (
-                <Card key={index} className={`relative overflow-hidden border-0 group hover-lift`}>
-                  <div className={`absolute inset-0 bg-gradient-to-br ${useCase.color} opacity-90`} />
-                  <CardContent className="relative z-10 p-6 text-white">
-                    <IconComponent className="h-8 w-8 mb-4 group-hover:scale-110 transition-transform" />
-                    <h3 className="text-lg font-semibold mb-2">{useCase.title}</h3>
-                    <p className="text-sm text-white/90 leading-relaxed">{useCase.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
+          
         </div>
       </section>  
 
