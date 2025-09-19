@@ -56,19 +56,19 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
 
 const team = [
+    {
+    name: 'Dr. Sana Shaikh',
+    role: 'Chief Science Officer',
+    avatar: 'SS',
+    bio: 'Oceanographer specializing in climate modeling and data visualization.',
+    links: { github: '#', linkedin: '#', email: 'sana.shaikh@floatchat.com' }
+  },
   {
     name: 'Labbai Irfan',
     role: 'Founder & CEO',
     avatar: 'LI',
     bio: 'Marine data scientist with 10+ years in oceanographic research and AI.',
     links: { github: '#', linkedin: '#', email: 'labbai.irfan@floatchat.com' }
-  },
-  {
-    name: 'Dr. Sana Shaikh',
-    role: 'Chief Science Officer',
-    avatar: 'SS',
-    bio: 'Oceanographer specializing in climate modeling and data visualization.',
-    links: { github: '#', linkedin: '#', email: 'sana.shaikh@floatchat.com' }
   },
   {
     name: 'Amrut Pathankar',
