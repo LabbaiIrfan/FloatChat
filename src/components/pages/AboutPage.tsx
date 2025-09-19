@@ -55,29 +55,44 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
   ];
 
 
-  const team = [
-    {
-      name: 'Labbai Irfan',
-      role: 'Founder & CEO',
-      avatar: 'LI',
-      bio: 'Marine data scientist with 10+ years in oceanographic research and AI.',
-      links: { github: '#', linkedin: '#', email: 'labbai.irfan@floatchat.com' }
-    },
-    {
-      name: 'Dr. Sana Shaikh',
-      role: 'Chief Science Officer',
-      avatar: 'SC',
-      bio: 'Oceanographer specializing in climate modeling and data visualization.',
-      links: { github: '#', linkedin: '#', email: 'sarah.chen@floatchat.com' }
-    },
-    {
-      name: 'Amrut pathankar',
-      role: 'Head of Engineering',
-      avatar: 'MR',
-      bio: 'Full-stack developer focused on scalable ocean data platforms.',
-      links: { github: '#', linkedin: '#', email: 'marcus.r@floatchat.com' }
-    }
-  ];
+const team = [
+  {
+    name: 'Labbai Irfan',
+    role: 'Founder & CEO',
+    avatar: 'LI',
+    bio: 'Marine data scientist with 10+ years in oceanographic research and AI.',
+    links: { github: '#', linkedin: '#', email: 'labbai.irfan@floatchat.com' }
+  },
+  {
+    name: 'Dr. Sana Shaikh',
+    role: 'Chief Science Officer',
+    avatar: 'SS',
+    bio: 'Oceanographer specializing in climate modeling and data visualization.',
+    links: { github: '#', linkedin: '#', email: 'sana.shaikh@floatchat.com' }
+  },
+  {
+    name: 'Amrut Pathankar',
+    role: 'Head of Engineering',
+    avatar: 'AP',
+    bio: 'Full-stack developer focused on scalable ocean data platforms.',
+    links: { github: '#', linkedin: '#', email: 'amrut.pathankar@floatchat.com' }
+  },
+  {
+    name: 'Aafia Shaikh',
+    role: 'Climate Data Specialist',
+    avatar: 'AS',
+    bio: 'Expert in climate modeling and ocean-atmosphere interactions, focusing on sustainability.',
+    links: { github: '#', linkedin: '#', email: 'aafia.shaikh@floatchat.com' }
+  },
+  {
+    name: 'Kashish Siddiqui',
+    role: 'AI & Visualization Engineer',
+    avatar: 'KS',
+    bio: 'Specialist in AI-driven data visualization, making complex ocean data accessible and insightful.',
+    links: { github: '#', linkedin: '#', email: 'kashish.siddiqui@floatchat.com' }
+  }
+];
+
 
   const tabs = [
     { id: 'mission', label: 'Our Mission', icon: Target },

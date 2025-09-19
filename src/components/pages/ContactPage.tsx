@@ -63,33 +63,49 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
       setTimeout(() => setSubmitStatus('idle'), 3000);
     }, 2000);
   };
+const teamMembers = [
+  {
+    name: 'Labbai Irfan',
+    role: 'Lead Ocean Data Scientist',
+    bio: 'Leading the development of AI-powered ocean analytics with 10+ years in marine science.',
+    email: 'labbai.irfan@floatchat.com',
+    expertise: ['Machine Learning', 'Oceanography', 'Data Analytics'],
+    initials: 'LI'
+  },
+  {
+    name: 'Sana Shaikh',
+    role: 'Marine Biology Advisor',
+    bio: 'Marine biologist and research consultant specializing in ARGO float data analysis.',
+    email: 'sana.shaikh@floatchat.com',
+    expertise: ['Marine Biology', 'Climate Science', 'Research'],
+    initials: 'SS'
+  },
+  {
+    name: 'Amrut Pathankar',
+    role: 'Oceanography Consultant',
+    bio: 'Professor of Oceanography at MIT, advising on ocean data interpretation.',
+    email: 'amrut.pathankar@floatchat.com',
+    expertise: ['Physical Oceanography', 'Climate Models', 'Education'],
+    initials: 'AP'
+  },
+  {
+    name: 'Aafia Shaikh',
+    role: 'Climate Data Specialist',
+    bio: 'Expert in climate modeling and ocean-atmosphere interactions, focusing on sustainable research.',
+    email: 'aafia.shaikh@floatchat.com',
+    expertise: ['Climate Modeling', 'Sustainability', 'Data Science'],
+    initials: 'AS'
+  },
+  {
+    name: 'Kashish Siddiqui',
+    role: 'AI & Visualization Engineer',
+    bio: 'Specialist in AI-driven data visualization, making complex ocean data accessible and insightful.',
+    email: 'kashish.siddiqui@floatchat.com',
+    expertise: ['AI', 'Data Visualization', 'UI/UX'],
+    initials: 'KS'
+  }
+];
 
-  const teamMembers = [
-    {
-      name: 'Labbai Irfan',
-      role: 'Lead Ocean Data Scientist',
-      bio: 'Leading the development of AI-powered ocean analytics with 10+ years in marine science.',
-      email: 'labbai.irfan@floatchat.com',
-      expertise: ['Machine Learning', 'Oceanography', 'Data Analytics'],
-      initials: 'LI'
-    },
-    {
-      name: 'Sana Shaikh',
-      role: 'Marine Biology Advisor',
-      bio: 'Marine biologist and research consultant specializing in ARGO float data analysis.',
-      email: 'Sana.Shaikh@floatchat.com',
-      expertise: ['Marine Biology', 'Climate Science', 'Research'],
-      initials: 'SC'
-    },
-    {
-      name: 'Amrut Pathankar',
-      role: 'Oceanography Consultant',
-      bio: 'Professor of Oceanography at MIT, advising on ocean data interpretation.',
-      email: 'michael.rodriguez@floatchat.com',
-      expertise: ['Physical Oceanography', 'Climate Models', 'Education'],
-      initials: 'MR'
-    },
-  ];
 
   const officeInfo = {
     headquarters: {
