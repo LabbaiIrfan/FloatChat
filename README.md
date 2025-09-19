@@ -1,0 +1,157 @@
+
+```markdown
+# FloatChat
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![Build Status](https://img.shields.io/github/actions/workflow/status/LabbaiIrfan/FloatChat/ci.yml?branch=main)](https://github.com/LabbaiIrfan/FloatChat/actions) [![npm version](https://img.shields.io/npm/v/floatchat)](https://www.npmjs.com/package/floatchat) [![Stars](https://img.shields.io/github/stars/LabbaiIrfan/FloatChat)](https://github.com/LabbaiIrfan/FloatChat/stargazers)
+
+[Live Demo](https://floatchat-delta.vercel.app/) | [GitHub Repository](https://github.com/LabbaiIrfan/FloatChat)
+
+---
+
+## Table of Contents
+- [About FloatChat](#about-floatchat)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Available Scripts](#available-scripts)
+- [Project Structure](#project-structure)
+- [Contribution Guidelines](#contribution-guidelines)
+- [Roadmap](#roadmap)
+- [License](#license)
+- [Contact](#contact)
+
+---
+
+## About FloatChat
+
+FloatChat is a minimalist chat UI template built with modern web technologies—React, TypeScript, and Vite. It focuses on simplicity, developer experience, and extensibility with a clean codebase ready for real-time chat integration. Ideal for developers who want a functional starting point for building scalable chat applications quickly.
+
+---
+
+## Features
+
+- 🚀 Fast Refresh with Vite and React SWC plugin
+- 🛠 TypeScript for type safety and better maintainability
+- 🎯 Pre-configured ESLint with best practice rules
+- 💡 Simple and modular code architecture
+- 📦 Minimal dependencies for lightweight footprint
+- 🌐 Responsive design for desktop and mobile devices
+
+---
+
+## Tech Stack
+
+| Technology | Purpose                      |
+|------------|------------------------------|
+| React      | UI framework                 |
+| TypeScript | Static typing                |
+| Vite       | Build tool & dev server      |
+| ESLint     | Linting and code quality     |
+| SWC Plugin | React fast refresh & build   |
+
+---
+
+## Screenshots
+
+![FloatChat UI](./screenshots/floatchat-demo.png)
+
+(Include more screenshots if available showing chat UI in action)
+
+---
+
+## Installation
+
+Clone the repo and install dependencies:
+
+```
+git clone https://github.com/LabbaiIrfan/FloatChat.git
+cd FloatChat
+npm install
+```
+
+---
+
+## Usage
+
+Start the development server with HMR enabled:
+
+```
+npm run dev
+```
+
+Open your browser at [http://localhost:5173](http://localhost:5173) to see the app.
+
+---
+
+## Available Scripts
+
+| Command       | Description                        |
+|---------------|----------------------------------|
+| `npm run dev` | Starts the dev server with HMR    |
+| `npm run build` | Builds the app for production    |
+| `npm run lint` | Runs ESLint for code analysis     |
+
+---
+
+## Project Structure
+
+```
+├── public/               # Static public assets
+├── src/
+│   ├── components/       # React UI components
+│   ├── hooks/            # Custom React hooks
+│   ├── styles/           # CSS/SCSS files
+│   ├── utils/            # Utility functions
+│   ├── App.tsx           # Main app component
+│   └── main.tsx          # App entry point
+├── package.json          # Project config & scripts
+├── tsconfig.json         # TypeScript configuration
+└── vite.config.ts        # Vite configuration
+```
+
+---
+
+## Contribution Guidelines
+
+Contributions are very welcome! Please:
+
+- Fork the repository
+- Create a feature branch (`git checkout -b feature/some-feature`)
+- Write clear, concise commit messages
+- Ensure code passes ESLint and all tests before submitting a PR
+- Follow the existing code style and architecture
+
+---
+
+## Roadmap
+
+Future plans include:
+
+- Real-time chat integration (WebSocket/Socket.IO)
+- User authentication and profiles
+- Dark/light mode themes
+- Message notifications and typing indicators
+- Deployment workflows
+
+Feel free to submit feature requests via GitHub Issues.
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## Contact
+
+For questions or collaboration, please open an issue or contact the maintainer via GitHub:
+
+[Labbai Irfan](https://github.com/LabbaiIrfan)
+
+---
+
+Thank you for checking out FloatChat! If this project helps you, please consider starring the repository ⭐️
+```
