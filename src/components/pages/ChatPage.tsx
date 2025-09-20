@@ -68,21 +68,21 @@ export function ChatPage({ onNavigate, isDark }: ChatPageProps) {
     {
       id: '1',
       name: 'Pacific Temperature Analysis',
-      lastMessage: 'What are the current temperature trends?',
+      lastMessage: 'highest density in first 100 rows',
       timestamp: new Date(Date.now() - 3600000),
       messageCount: 15
     },
     {
       id: '2',
       name: 'ARGO Float Performance',
-      lastMessage: 'Show me float status in Atlantic',
+      lastMessage: 'what is the average depth?',
       timestamp: new Date(Date.now() - 7200000),
       messageCount: 8
     },
     {
       id: '3',
-      name: 'Salinity Variations Study',
-      lastMessage: 'Compare salinity levels globally',
+      name: 'what is the average temperature in first 200 rows',
+      lastMessage: '',
       timestamp: new Date(Date.now() - 86400000),
       messageCount: 22
     }
@@ -149,11 +149,9 @@ export function ChatPage({ onNavigate, isDark }: ChatPageProps) {
   };
 
   const suggestedQuestions = [
-    "What are the current temperature trends in the Pacific?",
-    "Show me ARGO float locations with recent data",
-    "Compare salinity levels between Atlantic and Pacific",
-    "Are there any anomalies in recent measurements?",
-    "Generate a report on ocean temperature changes"
+    "highest density in first 100 rows ?",
+    "what is the average depth?",
+    "what is the average temperature in first 200 rows",
   ];
 
   const quickFilters = [
