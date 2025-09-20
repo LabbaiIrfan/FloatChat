@@ -112,9 +112,9 @@ export function ChatPage({ onNavigate, isDark }: ChatPageProps) {
   setInputMessage('');
   setIsTyping(true);
   try {
-    const response = await fetch(`http://localhost:8000/chat-query/${encodeURIComponent(inputMessage)}`);
+    const response = await fetch(`https://floatbackend-production.up.railway.app/chat-query/${encodeURIComponent(inputMessage)}`);
     const data = await response.json();
-    
+    console.log('API response:', data);
     const aiMessage: Message = {
       id: (Date.now() + 1).toString(),
       type: 'ai',
